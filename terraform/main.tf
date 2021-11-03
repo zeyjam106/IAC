@@ -17,3 +17,25 @@ resource "aws_instance" "site" {
             
         }
 }
+
+resource "aws_instance" "website" {
+    ami = "ami-01cc34ab2709337aa"
+    instance_type="t2.micro"
+    key_name="jam106"
+    vpc_security_group_ids = ["sg-0e38108dfe93d7f06"]
+        tags = {
+            Name = "Hello Man"
+            
+        }
+}
+
+resource "aws_instance" "DBsite" {
+    ami = "ami-01cc34ab2709337aa"
+    instance_type="t2.micro"
+    key_name="jam106"
+    vpc_security_group_ids = ["sg-0e38108dfe93d7f06"]
+        tags = {
+            Name = "Cool project"
+            
+        }
+}
